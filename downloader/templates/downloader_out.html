@@ -1,0 +1,40 @@
+{% extends 'downloader.html' %}
+{% block downloader_out %}
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+<div style="margin: 0 auto; width: auto;">
+
+
+
+                                        <p><h3>  {{ title }}</h3></p>
+
+                                        <div class="btn-group">
+
+
+
+
+                                            <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                                Выбрать качество
+                                            </button>
+
+                                            <ul class="dropdown-menu">
+
+
+
+
+                                                {% for quality in qualitys %}
+                                                {% for durl in durls %}
+                                                <li><a class="dropdown-item" href="{{ durl }}" download="videoplayback.mp4" target="_blank">{{ quality }}</a></li>
+                                                {% endfor %}
+                                                {% endfor %}
+
+
+
+
+
+
+                                            </ul>
+                                        </div>
+
+
+{% endblock %}

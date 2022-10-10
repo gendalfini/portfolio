@@ -27,7 +27,8 @@ urlpatterns = [
     path('passgen', include('passgen.urls')),
     path('numgen', include('numgen.urls')),
     path('caesar', include('caesar.urls')),
-    
+    path('downloader', include('downloader.urls')),
+
 
 
 

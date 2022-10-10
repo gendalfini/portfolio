@@ -1,0 +1,24 @@
+{% extends 'header.html' %}
+{% block content %}
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+<div class="container text-center">
+<h5>Привет, я помогу тебе скачать видео с Ютуба</h5>
+
+<form action="{% url 'downloader_out' %}">
+<p>Введи ссылку на видео <input type='url' name='adr' required></p>
+<p>Что нужно скачать?</p>
+<p><input type="radio" name="option" value="VA" checked>Видео+аудио</p>
+<p><input type="radio" name="option" value="V" >Только видео</p>
+<p><input type="radio" name="option" value="A" >Только аудио</p>
+<input type="submit" value="Search" class="btn btn-primary">
+</form>
+<br>
+{% block downloader_out %}
+
+
+
+{% endblock %}
+
+</div>
+{% endblock %}
