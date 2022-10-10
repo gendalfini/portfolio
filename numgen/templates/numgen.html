@@ -1,0 +1,24 @@
+{% extends 'header.html' %}
+{% block content %}
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+
+<div class="container text-center">
+  <p>Здесь ты можешь сгенерировать необходимое количество случайных чисел в нужном диапазоне. Сейчас количество чисел ограничено 1000 (просто чтобы не нагружать сайт).</p>
+<form action="{% url 'numgen_output' %}">
+<p>Сколько чисел требуется? (до 1000)<input type='number' name='amount' min="1" max="1000" required></p>
+<p>Нижний диапазон (от -10к до 10к)<input type='number' name='diapazon1' min="-10000" max="10000" required></p>
+<p>Верхний диапазон (от -10к до 10к)<input type='number' name='diapazon2' min="-9999" max="9999" required></p>
+<p>Активируй флажок, если нужны только целые числа:  <input type="checkbox" name="integer"></p>
+
+<input type="submit" value="Generate" class="btn btn-primary">
+</form>
+</div>
+
+
+<br>
+
+{% block num_result %}
+{% endblock %}
+
+{% endblock %}

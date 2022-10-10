@@ -1,0 +1,26 @@
+{% extends 'header.html' %}
+{% block content %}
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+<div class="container text-center">
+  <form action="{% url 'caesar_output' %}">
+<h5>Привет! Я помогу тебе зашифровать сообщение с помощью шифра Цезаря или расшифровать его</h5>
+<p>Введи шаг шифровки/дешифровки <input type='number' name='step' min="1" max="100" required></p>
+
+<p><input type="radio" name="shifr" value="0" checked>Шифровка</p>
+<p><input type="radio" name="shifr" value="1">Дешифровка</p>
+<p><b>Введи текст:</b></p>
+<p><textarea name="text"></textarea></p>
+
+
+<input type="submit" value="Start" class="btn btn-primary">
+</form>
+<br>
+{% block caesar_result %}
+
+
+
+{% endblock %}
+
+</div>
+{% endblock %}
